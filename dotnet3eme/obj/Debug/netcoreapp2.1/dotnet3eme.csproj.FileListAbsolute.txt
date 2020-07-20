@@ -1,0 +1,8 @@
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\bin\Debug\netcoreapp2.1\dotnet3eme.deps.json
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\bin\Debug\netcoreapp2.1\dotnet3eme.runtimeconfig.json
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\bin\Debug\netcoreapp2.1\dotnet3eme.runtimeconfig.dev.json
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\bin\Debug\netcoreapp2.1\dotnet3eme.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\obj\Debug\netcoreapp2.1\dotnet3eme.csprojAssemblyReference.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\obj\Debug\netcoreapp2.1\dotnet3eme.AssemblyInfoInputs.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\obj\Debug\netcoreapp2.1\dotnet3eme.AssemblyInfo.cs
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\dotnet3eme\obj\Debug\netcoreapp2.1\dotnet3eme.genruntimeconfig.cache

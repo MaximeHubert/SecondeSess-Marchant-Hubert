@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/WyMxoZ2bLFtqGF6GHkDLL/Qx8jH9+jzZ5Js5TaLt3vssXRUZ9ossnJBRDfxHYGd3hqXEglom3HjGwQKVFr6EQ==",
+  "dgSpecHash": "/j2DGXNt9hTOqJ+BL7bvCmoDrkTGljWyHM6v/OFDdPoBJP7rMSgggSxdPzvAzbCPxj4wZEj7a4F/giomQJ8ibg==",
   "success": true,
   "projectFilePath": "C:\\Users\\maxim\\OneDrive\\Bureau\\Annee3\\Dotnet\\ExamenSess\\dotnet3eme\\dotnet3eme.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\maxim\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.1.0\\microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
