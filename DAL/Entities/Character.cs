@@ -23,9 +23,8 @@ namespace DAL.Entities
             CharacterActor = new List<CharacterActor>();
         }
 
-        public Character(long id, string characterName)
+        public Character(string characterName)
         {
-            Id = id;
             CharacterName = characterName;
             CharacterActor = new List<CharacterActor>();
         }

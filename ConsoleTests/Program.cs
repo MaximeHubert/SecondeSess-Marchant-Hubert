@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -86,9 +87,9 @@ namespace ConsoleTests
                         {
                             Character text = new Character();
                             text.CharacterName = r;
-                            f.Character.add(text);
+                            f.Character.Add(text);
 
-                            f.Acteur.add(DecodeActorline(s));
+                            f.Actor.Add(DecodeActorline(s));
                         }
 
 
