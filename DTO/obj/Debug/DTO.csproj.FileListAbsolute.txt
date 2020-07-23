@@ -1,0 +1,6 @@
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DTO\bin\Debug\DTO.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DTO\bin\Debug\DTO.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DTO\obj\Debug\DTO.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DTO\obj\Debug\DTO.pdb

@@ -19,7 +19,7 @@ namespace DAL
         public DbSet<Character> character { get; set; }
         public DbSet<CharacterActor> characterActor { get; set; }
 
-        private DALDBContext() : base("NomBD")
+        public DALDBContext() : base("MoviesDatabase")
         {
         }
 

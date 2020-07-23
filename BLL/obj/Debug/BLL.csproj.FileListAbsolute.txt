@@ -1,0 +1,17 @@
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\BLL.dll.config
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\BLL.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\BLL.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\DAL.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\DTO.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\EntityFramework.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\DAL.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\DAL.dll.config
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\DTO.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\EntityFramework.xml
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.pdb

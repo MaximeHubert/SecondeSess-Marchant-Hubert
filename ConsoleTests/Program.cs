@@ -1,10 +1,12 @@
 ﻿
+using BLL;
 using DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -14,6 +16,7 @@ namespace ConsoleTests
     {
         private string file = @"C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\movies_v2.txt";
         private StreamReader fichier = null;
+        private BLLManager manager = null;
         static void Main(string[] args)
         {
 
@@ -21,9 +24,14 @@ namespace ConsoleTests
             bool choix = false;
             while (choix == false)
             {
-                Console.WriteLine(" Voulez vous importer des films ?\n");
-                Console.WriteLine("Si oui , tapez 1 \n");
-                Console.WriteLine("Si non , tapez 2 \n");
+                Console.WriteLine("-------------------------------------\n");
+                Console.WriteLine("|                MENU               |\n");
+                Console.WriteLine("-------------------------------------\n\n\n");
+                Console.WriteLine("Que voulez vous faire ?\n");
+                Console.WriteLine("(1) Importer des films\n");
+                Console.WriteLine("(2) Faire des tests\n");
+                Console.WriteLine("(3) Quitter\n\n");
+                Console.WriteLine("Choix :");
 
                 string reponse = Console.ReadLine();
 
@@ -36,8 +44,13 @@ namespace ConsoleTests
                     case "2":
                         choix = true;
                         break;
+                    case "3":
+                        choix = true;
+                        Console.WriteLine("\n\nL'application se fermera dans 5 secondes\n");
+                        Thread.Sleep(5000);
+                        break;
                     default:
-                        Console.WriteLine("Veuillez écrire un choix correcte\n\n\n");
+                        Console.WriteLine("\n\nVeuillez écrire un choix correct\n\n\n");
                         break;
                 }
             }
@@ -45,6 +58,7 @@ namespace ConsoleTests
 
         private void importFilm()
         {
+            manager = new BLLManager();
             int i = 0;
             fichier = new StreamReader(file);
 
@@ -52,8 +66,17 @@ namespace ConsoleTests
             {
                 string ligne = fichier.ReadLine();
                 Film film = DecodeFilmline(ligne);
+                if(film.Title.Length <=90)
+                {
+                    manager.AddFilm(film);
+                }
+                Console.WriteLine(i+" "+film.Title + " ");
+                i++;
+
             }
+            Console.ReadKey();
         }
+
 
         private Film DecodeFilmline(string ligne)
         {
@@ -115,6 +138,7 @@ namespace ConsoleTests
             }
             catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 text.Surname = "";
             }
             return text;

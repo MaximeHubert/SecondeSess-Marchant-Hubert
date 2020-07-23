@@ -41,35 +41,60 @@ namespace DAL
                 for (int i = 0; i < stop; i++)
                 {
 
-                    AddActor(Actors.ElementAt(i));
-                    AddCharacter(Characters.ElementAt(i));
-                    DBContext.SaveChanges();
+                    bool actor= AddActor(Actors.ElementAt(i));
+                    bool character = AddCharacter(Characters.ElementAt(i));
+
                     CharacterActor liaison = new CharacterActor();
 
-                    Film.CharacterActor.Add(liaison);
-                    Actors.ElementAt(i).CharacterActor.Add(liaison);
-                    Characters.ElementAt(i).CharacterActor.Add(liaison);
+                    if(actor==true && character==true)
+                    {
+                        Film.CharacterActor.Add(liaison);
+                        Actors.ElementAt(i).CharacterActor.Add(liaison);
+                        Characters.ElementAt(i).CharacterActor.Add(liaison);
+                    }
+                    else
+                    {
+                        long verifActor = Actors.ElementAt(i).Id;
+                        string verifcharacter = Characters.ElementAt(i).CharacterName;
+                        Actor actorBDD = (DBContext.actor.Where(a => a.Id == verifActor)).First();
+                        Character characterBDD = (DBContext.character.Where(c => c.CharacterName == verifcharacter)).First();
+                        Film.CharacterActor.Add(liaison);
+                        actorBDD.CharacterActor.Add(liaison);
+                        characterBDD.CharacterActor.Add(liaison);
+                    }
                     DBContext.SaveChanges();
+
 
                 }
             }
         }
 
-        private void AddActor(Actor ajout)
+        private bool AddActor(Actor ajout)
         {
             if(!DBContext.actor.Any(x => x.Id == ajout.Id))
             {
                 Actor retour = DBContext.actor.Add(ajout);
                 DBContext.SaveChanges();
+                return true;
             }
+            else
+            {
+                return false;
+            }
+
         }
 
-        private void AddCharacter (Character ajout)
+        private bool AddCharacter (Character ajout)
         {
             if (!DBContext.character.Any(x => x.Id == ajout.Id))
             {
                 Character retour = DBContext.character.Add(ajout);
                 DBContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
