@@ -1,0 +1,14 @@
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\ConsoleWCF.exe.config
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\ConsoleWCF.exe
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\ConsoleWCF.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\DTO.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\EntityFramework.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\DTO.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\EntityFramework.xml
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.csprojAssemblyReference.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.csproj.CoreCompileInputs.cache
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.csproj.CopyComplete
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.exe
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.pdb
