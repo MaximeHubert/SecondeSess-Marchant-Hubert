@@ -45,6 +45,7 @@
     <Compile Include="Character.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Film.cs" />
+    <Compile Include="FullActor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

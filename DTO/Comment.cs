@@ -12,22 +12,32 @@ namespace DTO
         public long Id { get; set; }
         public string Name { get; set; }
         public int Rate { get; set; }
-        public int IdActor { get; set; }
+        public long IdActor { get; set; }
         public string Avatar { get; set; }
         public string Date { get; set; }
+
 
         public Comment()
         {
         }
 
-        public Comment(long id, string name, int rate, int idActor, string avatar, string date)
+        public Comment( string name, int rate, long idActor, string avatar)
         {
-            Id = id;
+            Name = name;
+            Rate = rate;
+            IdActor = idActor;
+            Avatar = avatar;
+
+        }
+
+        public Comment(string name, int rate, long idActor, string avatar,string date)
+        {
             Name = name;
             Rate = rate;
             IdActor = idActor;
             Avatar = avatar;
             Date = date;
+
         }
 
     }

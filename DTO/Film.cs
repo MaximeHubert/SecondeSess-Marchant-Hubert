@@ -33,8 +33,11 @@ namespace DTO
             VoteAverage = voteAverage;
             RunTime = runTime;
             PosterPath = posterPath;
-            Character = new List<Character>();
-            Actor = new List<Actor>();
+        }
+
+        public Film(string title)
+        {
+            Title = title;
         }
     }
 }

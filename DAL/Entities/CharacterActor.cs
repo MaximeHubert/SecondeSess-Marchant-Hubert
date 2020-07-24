@@ -23,10 +23,11 @@ namespace DAL.Entities
         {
         }
 
-        public CharacterActor(Actor actor, Character character)
+        public CharacterActor(Film film,Actor actor, Character character)
         {
             Actor = actor;
             Character = character;
+            Film = film;
         }
         #endregion
 

@@ -25,7 +25,7 @@ namespace DAL.Entities
         public long Id { get; set; }
         public string Name { get; set; }
         public cote Rate { get; set; }
-        public int IdActor { get; set; }
+        public long IdActor { get; set; }
         public string Avatar { get; set; }
         public string Date { get; set; }
         #endregion
@@ -37,7 +37,7 @@ namespace DAL.Entities
         {
         }
 
-        public Comment(long id, string name, cote rate, int idActor, string avatar, string date)
+        public Comment(long id, string name, cote rate, long idActor, string avatar)
         {
             Id = id;
             Name = name;

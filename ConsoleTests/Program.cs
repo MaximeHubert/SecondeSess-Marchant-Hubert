@@ -1,8 +1,12 @@
 ﻿
 using BLL;
+using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,13 +28,14 @@ namespace ConsoleTests
             bool choix = false;
             while (choix == false)
             {
-                Console.WriteLine("-------------------------------------\n");
-                Console.WriteLine("|                MENU               |\n");
+                Console.Clear();
+                Console.WriteLine("-------------------------------------");
+                Console.WriteLine("|                MENU               |");
                 Console.WriteLine("-------------------------------------\n\n\n");
                 Console.WriteLine("Que voulez vous faire ?\n");
-                Console.WriteLine("(1) Importer des films\n");
-                Console.WriteLine("(2) Faire des tests\n");
-                Console.WriteLine("(3) Quitter\n\n");
+                Console.WriteLine("(1) Importer des films");
+                Console.WriteLine("(2) Faire des tests");
+                Console.WriteLine("(3) Quitter\n");
                 Console.WriteLine("Choix :");
 
                 string reponse = Console.ReadLine();
@@ -39,21 +44,289 @@ namespace ConsoleTests
                 {
                     case "1":
                         console.importFilm();
-                        choix = true;
                         break;
                     case "2":
-                        choix = true;
-                        break;
+                        Console.Clear();
+                        bool choixtest = false;
+                        while (choixtest == false)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("-------------------------------------");
+                            Console.WriteLine("|             MENU TEST             |");
+                            Console.WriteLine("-------------------------------------\n\n\n");
+                            Console.WriteLine("Quel test voulez vous faire ?\n");
+                            Console.WriteLine("(1) Afficher les 5 premiers film");
+                            Console.WriteLine("(2) Afficher les films pour un acteur donné ( Id ) ");
+                            Console.WriteLine("(3) Afficher les roles pour un acteur dans un film");
+                            Console.WriteLine("(4) Afficher les films pour un acteur donné ( Nom ) ");
+                            Console.WriteLine("(5) Afficher les 10 meilleurs film ");
+                            Console.WriteLine("(6) Afficher tous les détails d'un acteur ");
+                            Console.WriteLine("(7) Ajouter un commentaire ");
+                            Console.WriteLine("(8) Quitter\n");
+                            Console.WriteLine("Choix :");
+
+                            string reponsetest = Console.ReadLine();
+                            string rechercheactor;
+                            string recherchefilm;
+                            switch (reponsetest)
+                            {
+                                case "1":
+                                    Console.Clear();
+                                    console.afficher5film();
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "2":
+                                    Console.Clear();
+                                    Console.WriteLine("Ecrivez l'Id de l'acteur pour savoir ses films");
+                                    rechercheactor = Console.ReadLine();
+                                    long id = Convert.ToInt64(rechercheactor);
+                                    console.GetListFilmsByIdActor(id);
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "3":
+                                    Console.Clear();
+                                    Console.WriteLine("Ecrivez l'Id de l'acteur");
+                                    rechercheactor = Console.ReadLine();
+                                    long idactor = Convert.ToInt64(rechercheactor);
+
+                                    Console.WriteLine("Ecrivez l'Id du film");
+                                    recherchefilm = Console.ReadLine();
+                                    long idfilm = Convert.ToInt64(recherchefilm);
+                                    console.GetListCharacterByIdActorAndIdFilm(idactor,idfilm);
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "4":
+                                    Console.Clear();
+                                    Console.WriteLine("Ecrivez le nom en entier ou en partie d'un acteur pour savoir ses films");
+                                    rechercheactor = Console.ReadLine();
+
+                                    Console.WriteLine("Ecrivez le nombre max de film retournés");
+                                    string maxfilm = Console.ReadLine();
+                                    int max = Convert.ToInt32(maxfilm);
+                                    console.FindListFilmByPartialActorName(rechercheactor,max);
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "5":
+                                    Console.Clear();
+                                    Console.WriteLine("List des 10 meilleurs film \n\n");
+                                    console.GetFavoriteFilms();
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "6":
+                                    Console.Clear();
+                                    Console.WriteLine("Ecrivez l'Id de l'acteur pour savoir ses détails");
+                                    rechercheactor = Console.ReadLine();
+                                    long idall = Convert.ToInt64(rechercheactor);
+                                    console.GetFullActorDetailsByIdActor(idall);
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "7":
+                                    Console.Clear();
+                                    Console.WriteLine("Ecrivez l'Id de l'acteur pour votre commentaire");
+                                    rechercheactor = Console.ReadLine();
+                                    int idcom = Convert.ToInt32(rechercheactor);
+                                    Console.WriteLine("Ecrivez votre nom d'avatar");
+                                    string avatar = Console.ReadLine();
+                                    Console.WriteLine("Ecrivez votre commentaire");
+                                    string text = Console.ReadLine();
+                                    Console.WriteLine("Ecrivez votre note [1-5]");
+                                    string note = Console.ReadLine();
+                                    int rate = Convert.ToInt32(note);
+                                    console.InsertCommentOnActorId(idcom,avatar,text,rate);
+                                    Console.WriteLine("Tapez une touche pour continuer");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "8":
+                                    choixtest = true;
+                                    Console.WriteLine("\n\nRetour au menu principal");
+                                    Thread.Sleep(1000);
+                                    Console.Clear();
+                                    break;
+                                default:
+                                    Console.WriteLine("\n\nVeuillez écrire un choix correct\n\n\n");
+                                    break;
+
+                            }
+
+
+                        }
+
+
+
+                            break;
                     case "3":
                         choix = true;
-                        Console.WriteLine("\n\nL'application se fermera dans 5 secondes\n");
-                        Thread.Sleep(5000);
+                        Console.WriteLine("\n\nL'application se fermera dans 3 secondes");
+                        Thread.Sleep(3000);
                         break;
                     default:
                         Console.WriteLine("\n\nVeuillez écrire un choix correct\n\n\n");
                         break;
                 }
             }
+        }
+
+        private void InsertCommentOnActorId(int idcom, string avatar, string text, int rate)
+        {
+            manager = new BLLManager();
+
+            manager.AddComment(idcom,avatar,text, rate);
+            Console.Clear();
+            Console.WriteLine("Votre Commentaire a bien été encodé !");
+            Console.WriteLine("\n\n\n");
+        }
+
+        private void GetFullActorDetailsByIdActor(long idall)
+        {
+            manager = new BLLManager();
+
+            FullActor MyActor = manager.RecupAllActor(idall);
+            Console.Clear();
+            Console.WriteLine(" Id : " + MyActor.Id);
+            Console.WriteLine(" Name : " + MyActor.Name);
+            Console.WriteLine(" Surname: " + MyActor.Surname);
+            Console.Write(" Characters : ");
+            foreach (Character c in MyActor.characters)
+            {
+                Console.Write(c.CharacterName+ " | ");
+            }
+
+            Console.Write("\n Films : ");
+            foreach (Film f in MyActor.Films)
+            {
+                Console.Write(f.Title + " | ");
+            }
+
+            Console.WriteLine(" \n Comments : ");
+            foreach (Comment c in MyActor.Comment)
+            {
+                Console.WriteLine(" "+c.Name + " | Rate : "+ c.Rate + " | Date : " + c.Date + " | Avatar : " + c.Avatar);
+            }
+            Console.WriteLine("\n\n\n");
+        }
+
+        private void GetFavoriteFilms()
+        {
+            manager = new BLLManager();
+
+            List<Film> ListFilm = manager.RecuptopFilm();
+
+            foreach (Film f in ListFilm)
+            {
+                Console.WriteLine("Id :" + f.Id);
+                Console.WriteLine("Title :" + f.Title);
+                Console.WriteLine("VoteAverage :" + f.VoteAverage);
+                Console.WriteLine("\n\n\n");
+
+            }
+        }
+
+        private void FindListFilmByPartialActorName(string rechercheactor,int max)
+        {
+            manager = new BLLManager();
+
+            List<Film> ListFilm = manager.RecupFilmActorName(rechercheactor,max);
+            Console.Clear();
+            Console.WriteLine("Actor nom : " + rechercheactor + "\n\n\n");
+
+            int page=0;
+            foreach (Film f in ListFilm)
+            {
+                if (page < 10)
+                {
+                    Console.WriteLine("Id :" + f.Id);
+                    Console.WriteLine("Title :" + f.Title);
+                    Console.WriteLine("ReleaseDate :" + f.ReleaseDate);
+                    Console.WriteLine("VoteAverage :" + f.VoteAverage);
+                    Console.WriteLine("RunTime :" + f.RunTime);
+                    Console.WriteLine("PosterPath :" + f.PosterPath);
+                    Console.WriteLine("\n\n\n");
+                    page++;
+                }
+                else
+                {
+                    Console.WriteLine("Page Suivante -> [ENTER]");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("Actor nom : " + rechercheactor + "\n\n\n");
+                    page = 0;
+                }
+            }
+
+        }
+
+        private void GetListCharacterByIdActorAndIdFilm(long idactor, long idfilm)
+        {
+            manager = new BLLManager();
+
+            List<Character> ListCharacter = manager.RecupRoleFilmActor(idactor,idfilm);
+            Console.Clear();
+            Console.WriteLine("Actor Id : " + idactor );
+            Console.WriteLine("Film Id : " + idfilm + "\n\n\n");
+
+            foreach (Character c in ListCharacter)
+            {
+                Console.WriteLine("Name :" + c.CharacterName);
+            }
+            Console.WriteLine("\n\n\n");
+        }
+
+        private void GetListFilmsByIdActor(long recherche)
+        {
+            manager = new BLLManager();
+
+            List<Film> ListFilm = manager.RecupFilmActor(recherche);
+            Console.Clear();
+            Console.WriteLine("Actor Id : " + recherche+"\n\n\n");
+
+            foreach (Film f in ListFilm)
+            {
+                Console.WriteLine("Id :" + f.Id);
+                Console.WriteLine("Title :" + f.Title);
+                Console.WriteLine("ReleaseDate :" + f.ReleaseDate);
+                Console.WriteLine("VoteAverage :" + f.VoteAverage);
+                Console.WriteLine("RunTime :" + f.RunTime);
+                Console.WriteLine("PosterPath :" + f.PosterPath);
+                Console.WriteLine("\n\n\n");
+            }
+        }
+
+        private void afficher5film()
+        {
+            manager = new BLLManager();
+
+            List<Film> List5Film = manager.Recup5Film();
+
+            foreach (Film f in List5Film)
+            {
+                Console.WriteLine("Id :" + f.Id);
+                Console.WriteLine("Title :" + f.Title);
+                Console.WriteLine("ReleaseDate :" + f.ReleaseDate);
+                Console.WriteLine("VoteAverage :" + f.VoteAverage);
+                Console.WriteLine("RunTime :" + f.RunTime);
+                Console.WriteLine("PosterPath :" + f.PosterPath);
+                Console.Write("Actors  :  ");
+                foreach (Actor a in f.Actor)
+                {
+                    Console.Write(a.Name + " " + a.Surname + " | ");
+                }
+                Console.WriteLine("\n\n\n");
+
+            }
+
         }
 
         private void importFilm()
@@ -74,7 +347,9 @@ namespace ConsoleTests
                 i++;
 
             }
+            Console.WriteLine("Tapez une touche pour continuer");
             Console.ReadKey();
+            Console.Clear();
         }
 
 

@@ -17,7 +17,6 @@ namespace DTO
 
         public Actor()
         {
-            Comment = new List<Comment>();
         }
 
         public Actor(long id, string name, string surname)
@@ -25,7 +24,14 @@ namespace DTO
             Id = id;
             Name = name;
             Surname = surname;
-            Comment = new List<Comment>();
+        }
+
+        public Actor(long id, string name, string surname,ICollection<Comment> comment)
+        {
+            Id = id;
+            Name = name;
+            Surname = surname;
+            Comment = comment;
         }
     }
 }

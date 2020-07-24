@@ -28,11 +28,8 @@ namespace DAL
             /*parcourir la liste d'acteurs et de personnages pour les insérer un par un dans la bdd si ils n'existent pas (un prsonnage et un acteur en même temps)*/
             /* lier le film, l'acteur et le personnage au characterActor qui leur correspond de la bdd*/
             /* ne pas oublier : après un ou plusieurs ajouts, utiliser le DBContext.SaveChanges(); */
-            if(DBContext.film.Any(x => x.Id == Film.Id))
-            {
 
-            }
-            else
+            if (!DBContext.film.Any(x => x.Id == Film.Id))
             {
                 DBContext.film.Add(Film);
 
@@ -67,6 +64,112 @@ namespace DAL
 
                 }
             }
+        }
+
+        public List<Film> RecupFilmActor(long recherche)
+        {
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Id == recherche).ToList();
+            List<Film> ListFilm = new List<Film>();
+
+
+            foreach (CharacterActor ca in characterActors)
+            {
+                ListFilm.Add(ca.Film);
+            }
+            return ListFilm;
+
+        }
+
+        public ICollection<Character> RecupRoleFilmActor(long idactor, long idfilm)
+        {
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Id == idactor && ca.Film.Id == idfilm).ToList();
+            List<Character> ListCharacter = new List<Character>();
+
+            foreach (CharacterActor ca in characterActors)
+            {
+                ListCharacter.Add(ca.Character);
+            }
+            return ListCharacter;
+        }
+
+        public ICollection<Film> RecupFilmActorName(string rechercheactor, int max)
+        {
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Name.Contains( rechercheactor)).Take(max).ToList();
+            List<Film> ListFilm = new List<Film>();
+
+
+            foreach (CharacterActor ca in characterActors)
+            {
+                ListFilm.Add(ca.Film);
+            }
+            return ListFilm;
+        }
+
+        public ICollection<Film> RecuptopFilm()
+        {
+            return DBContext.film.OrderByDescending(f => f.VoteAverage).Take(10).ToList();
+        }
+
+        public Actor RecupMyActor(long idall)
+        {
+            Actor acteur = DBContext.actor.Where(a => a.Id == idall).First();
+            return acteur;
+        }
+
+
+        public List<Film> Recup5Film()
+        {
+            return DBContext.film.Take(5).ToList();
+        }
+
+        public List<Character> RecupMyActorCharacter(long idall)
+        {
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Id == idall).ToList();
+            List<Character> ListCharacter = new List<Character>();
+
+            foreach (CharacterActor ca in characterActors)
+            {
+                ListCharacter.Add(ca.Character);
+            }
+            return ListCharacter;
+        }
+
+        public List<Comment> RecupMyActorComment(long idall)
+        {
+            return  DBContext.comment.Where(c => c.IdActor == idall).ToList();
+        }
+
+        public List<Film> RecupMyActorFilm(long idall)
+        {
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Id == idall).ToList();
+            List<Film> ListFilm = new List<Film>();
+
+            foreach (CharacterActor ca in characterActors)
+            {
+                ListFilm.Add(ca.Film);
+            }
+            return ListFilm;
+        }
+
+        public void AddComment(Comment newcomment)
+        {
+            if (!DBContext.comment.Any(c => c.Id == newcomment.Id))
+            {
+                DBContext.comment.Add(newcomment);
+                DBContext.SaveChanges();
+            }
+        }
+
+        public List<Actor> RecupActors(long id)
+        {
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Film.Id == id).ToList();
+            List<Actor> ListActor = new List<Actor>();
+
+            foreach(CharacterActor ca in characterActors)
+            {
+                ListActor.Add(ca.Actor);
+            }
+            return ListActor;
         }
 
         private bool AddActor(Actor ajout)
