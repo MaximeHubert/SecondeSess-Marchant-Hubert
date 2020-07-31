@@ -1,0 +1,36 @@
+﻿<Window x:Class="ApplicWPF.CommentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApplicWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="606" Width="1339.761">
+    <Grid Margin="0,0,2,0">
+        <ListView x:Name="listComment"  Height="427" Margin="10,67,717,81" FontSize="18">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn   Header = "Date" Width="100" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn   Header = "Content" Width="250" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn   Header = "Rate" Width="150" DisplayMemberBinding="{Binding Rate}"/>
+                    <GridViewColumn   Header = "Avatar" Width="80" DisplayMemberBinding= "{Binding Avatar}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="LabelNew" Content="New Comment" HorizontalAlignment="Center" Margin="918,88,225,411" FontSize="25" Width="187" FontWeight="Bold"/>
+        <Label x:Name="LabelCommentaire" Content="Contenu :" HorizontalAlignment="Center" Margin="613,321,263,178" FontSize="25" Width="454"/>
+        <TextBox x:Name="textavatar" Margin="722,169,388,352" TextWrapping="Wrap" Text="" />
+        <Label x:Name="LabelCote" Content="Cote :" HorizontalAlignment="Center" Margin="963,169,263,330" FontSize="25" Width="104"/>
+        <ComboBox x:Name="BoxCote"  Margin="1048,176,16,364" Text="Aucun" RenderTransformOrigin="0.5,0.5">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="LabelAvatar" Content="Avatar : " HorizontalAlignment="Center" Margin="613,169,613,330" FontSize="25" Width="104"/>
+        <TextBox x:Name="textContenu" Margin="776,265,45,141" TextWrapping="Wrap" Text="" />
+        <Button x:Name="ButtonSave" Content="Sauvegarder"  Margin="862,461,124,81" Click="BSave" FontSize="14"/>
+        <Button x:Name="ButtonClose" Content="Fermer"  Margin="187,512,921,29" Click="BClose" FontSize="14"/>
+    </Grid>
+</Window>

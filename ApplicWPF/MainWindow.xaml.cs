@@ -24,7 +24,7 @@ namespace ApplicWPF
     {
         public static int NumeroPage = 0;
         public static bool mode = false;
-        public long selectedactor = -1;
+        public  long selectedactor = -1;
         Service1Client WPF = new Service1Client();
         public MainWindow()
         {
@@ -85,6 +85,7 @@ namespace ApplicWPF
             }
             int nombre;
             NumeroPage++;
+            selectedactor = -1;
 
             if (mode == false)
             {
@@ -111,6 +112,7 @@ namespace ApplicWPF
         {
             NumeroPage--;
             int nombre;
+            selectedactor = -1;
 
             if (mode == false)
             {
@@ -137,6 +139,7 @@ namespace ApplicWPF
         {
             if(!textrecherche.Text.Equals(""))
             {
+                selectedactor = -1;
                 NumeroPage = 0;
                 mode = true;
                 ButtonAnnuler.Visibility = Visibility.Visible;
@@ -157,6 +160,7 @@ namespace ApplicWPF
         private void BAnnuler(object sender, RoutedEventArgs e)
         {
             mode = false;
+            selectedactor = -1;
             ButtonAnnuler.Visibility = Visibility.Hidden;
             textrecherche.Text = "";
             RecupActor();
@@ -169,40 +173,49 @@ namespace ApplicWPF
             ActorViewModel ActorSelect = (ActorViewModel)dataGridActor.SelectedItem;
             listFilm.Items.Clear();
             listPersonnage.Items.Clear();
+            LabelNomActor.Content = "";
 
             if (ActorSelect != null)
             {
                 selectedactor = ActorSelect.Id;
                 DTO.FullActor actor = WPF.RecupAllActor(ActorSelect.Id);
 
+                Moyenne();
+
                 List<DTO.Film> listfilmDTO = new List<DTO.Film>();
                 List<DTO.Character> listcharacterDTO = new List<DTO.Character>();
 
-                float nombre = 0;
-                float total = 0;
-
-                foreach (DTO.Comment c in actor.Comment)
-                {
-                    total = total + c.Rate;
-                    nombre++;
-                }
-
-                if (nombre == 0)
-                {
-                    LabelNomActor.Content = actor.Name + " " + actor.Surname + " " + "(0)";
-                }
-                else
-                {
-                    float moyenne = total / nombre;
-                    string moy = String.Format("{0:0.#}",moyenne);
-                    LabelNomActor.Content = actor.Name + " " + actor.Surname + " " + moy + " " + "(" + nombre.ToString() + ")";
-                }
+               
 
                 foreach (DTO.Film f in actor.Films)
                 {
                     listFilm.Items.Add(f);
                 }
 
+            }
+        }
+
+        public void Moyenne ()
+        {
+            DTO.FullActor actor = WPF.RecupAllActor(selectedactor);
+            float nombre = 0;
+            float total = 0;
+
+            foreach (DTO.Comment c in actor.Comment)
+            {
+                total = total + c.Rate;
+                nombre++;
+            }
+
+            if (nombre == 0)
+            {
+                LabelNomActor.Content = actor.Name + " " + actor.Surname + " " + "(0)";
+            }
+            else
+            {
+                float moyenne = total / nombre;
+                string moy = String.Format("{0:0.#}", moyenne);
+                LabelNomActor.Content = actor.Name + " " + actor.Surname + " " + moy + " " + "(" + nombre.ToString() + ")";
             }
         }
 
@@ -228,6 +241,20 @@ namespace ApplicWPF
                 ImageFilm.Source = Poster;
                 
             }
+        }
+
+        private void ClickCommentaire(object sender, RoutedEventArgs e)
+        {
+            
+            if (selectedactor != -1)
+            {
+                CommentWindow PageComment = new CommentWindow(selectedactor,this);
+                PageComment.Show();
+                Moyenne();
+            }
+
+
+
         }
 
 

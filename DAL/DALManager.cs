@@ -136,7 +136,8 @@ namespace DAL
 
         public List<Comment> RecupMyActorComment(long idall)
         {
-            return  DBContext.comment.Where(c => c.IdActor == idall).ToList();
+            List<Comment> liste = DBContext.comment.Where(c => c.IdActor == idall).ToList();
+            return liste.OrderBy(c => c.Date).ToList();
         }
 
         public List<Film> RecupMyActorFilm(long idall)

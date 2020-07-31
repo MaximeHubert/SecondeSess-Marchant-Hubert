@@ -39,8 +39,8 @@
                     <GridViewColumn   Header ="Personnage" Width="270" />
                 </GridView>
             </ListView.View>
-
         </ListView>
+        <Button x:Name="ButtonCommentaire" Content="Commentaire"  Margin="822,410,26,132"  Width="110" Click="ClickCommentaire" Height="33"/>
 
     </Grid>
 </Window>

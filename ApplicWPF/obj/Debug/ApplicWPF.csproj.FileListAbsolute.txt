@@ -17,3 +17,5 @@ C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ApplicWPF\bin\Debug\DTO.
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ApplicWPF\bin\Debug\DTO.pdb
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ApplicWPF\obj\Debug\ApplicWPF.csproj.CopyComplete
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ApplicWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ApplicWPF\obj\Debug\CommentWindow.g.cs
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ApplicWPF\obj\Debug\CommentWindow.baml
