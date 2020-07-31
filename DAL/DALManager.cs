@@ -146,7 +146,10 @@ namespace DAL
 
             foreach (CharacterActor ca in characterActors)
             {
-                ListFilm.Add(ca.Film);
+                if (!ListFilm.Any(x => x.Title == ca.Film.Title))
+                {
+                    ListFilm.Add(ca.Film);
+                }            
             }
             return ListFilm;
         }
@@ -199,6 +202,18 @@ namespace DAL
             {
                 return false;
             }
+        }
+
+        public List<Actor> RecupActorByPage()
+        {
+            List<Actor> ListActor = DBContext.actor.OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList();
+            return ListActor;
+        }
+
+        public List<Actor> RecupActorByResearch(string recherche)
+        {
+            List<Actor> ListActor = DBContext.actor.Where(a => a.Name.Contains(recherche)).OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList();
+            return ListActor;
         }
     }
 }

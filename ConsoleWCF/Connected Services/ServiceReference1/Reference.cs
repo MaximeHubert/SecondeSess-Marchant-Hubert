@@ -62,6 +62,18 @@ namespace ConsoleWCF.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupAllActor", ReplyAction="http://tempuri.org/IService1/RecupAllActorResponse")]
         System.Threading.Tasks.Task<DTO.FullActor> RecupAllActorAsync(long idall);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupActorByPage", ReplyAction="http://tempuri.org/IService1/RecupActorByPageResponse")]
+        DTO.Actor[] RecupActorByPage(int numPage);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupActorByPage", ReplyAction="http://tempuri.org/IService1/RecupActorByPageResponse")]
+        System.Threading.Tasks.Task<DTO.Actor[]> RecupActorByPageAsync(int numPage);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupActorByResearch", ReplyAction="http://tempuri.org/IService1/RecupActorByResearchResponse")]
+        DTO.Actor[] RecupActorByResearch(int numPage, string recherche);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupActorByResearch", ReplyAction="http://tempuri.org/IService1/RecupActorByResearchResponse")]
+        System.Threading.Tasks.Task<DTO.Actor[]> RecupActorByResearchAsync(int numPage, string recherche);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -153,6 +165,22 @@ namespace ConsoleWCF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<DTO.FullActor> RecupAllActorAsync(long idall) {
             return base.Channel.RecupAllActorAsync(idall);
+        }
+        
+        public DTO.Actor[] RecupActorByPage(int numPage) {
+            return base.Channel.RecupActorByPage(numPage);
+        }
+        
+        public System.Threading.Tasks.Task<DTO.Actor[]> RecupActorByPageAsync(int numPage) {
+            return base.Channel.RecupActorByPageAsync(numPage);
+        }
+        
+        public DTO.Actor[] RecupActorByResearch(int numPage, string recherche) {
+            return base.Channel.RecupActorByResearch(numPage, recherche);
+        }
+        
+        public System.Threading.Tasks.Task<DTO.Actor[]> RecupActorByResearchAsync(int numPage, string recherche) {
+            return base.Channel.RecupActorByResearchAsync(numPage, recherche);
         }
     }
 }

@@ -76,6 +76,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.Actor.datasource" />
     <None Include="Properties\DataSources\DTO.Character.datasource" />
     <None Include="Properties\DataSources\DTO.Film.datasource" />
     <None Include="Properties\DataSources\DTO.FullActor.datasource" />

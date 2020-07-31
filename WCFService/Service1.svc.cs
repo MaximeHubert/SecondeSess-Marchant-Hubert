@@ -64,6 +64,19 @@ namespace WCFService
             return manager.RecuptopFilm();
         }
 
+        public List<Actor> RecupActorByPage(int numPage)
+        {
+            manager = new BLLManager();
+            return manager.RecupActorByPage(numPage);
+        }
+
+        public List<Actor> RecupActorByResearch(int numPage, string recherche)
+        {
+            manager = new BLLManager();
+            return manager.RecupActorByResearch(numPage,recherche);
+
+        }
+
 
 
 

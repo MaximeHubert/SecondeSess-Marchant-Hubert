@@ -18,3 +18,5 @@ C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\WCFService\obj\Debug\WCF
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\WCFService\obj\Debug\WCFService.csproj.CopyComplete
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\WCFService\obj\Debug\WCFService.dll
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\WCFService\obj\Debug\WCFService.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\WCFService\bin\PagedList.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\WCFService\bin\PagedList.xml

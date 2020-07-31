@@ -138,7 +138,7 @@ namespace BLL
 
             foreach (DAL.Entities.Film f in FilmDAL)
             {
-                FilmList.Add(new DTO.Film(f.Title));
+                FilmList.Add(new DTO.Film(f.Id,f.Title,f.ReleaseDate,f.VoteAverage,f.RunTime,f.PosterPath));
             }
 
             foreach(DAL.Entities.Comment c in CommentDAL)
@@ -157,6 +157,33 @@ namespace BLL
             DTO.Comment newCommentDTO = new DTO.Comment(text, rate, idcom, avatar);
             DAL.Entities.Comment newcomment = new DAL.Entities.Comment(newCommentDTO.Id,newCommentDTO.Name,(cote)newCommentDTO.Rate,newCommentDTO.IdActor,newCommentDTO.Avatar);
             Manager.AddComment(newcomment);
+        }
+
+        public List<DTO.Actor> RecupActorByPage(int numPage)
+        {
+            List<DTO.Actor> ListActorDTO = new List<DTO.Actor>();
+            ICollection<DAL.Entities.Actor> ListActorDAL = Manager.RecupActorByPage();
+
+            foreach(DAL.Entities.Actor a in ListActorDAL)
+            {
+                ListActorDTO.Add(new DTO.Actor(a.Id, a.Name, a.Surname));
+            }
+
+            return PagedList.PagedListExtensions.ToPagedList(ListActorDTO, numPage+1,10).ToList();
+
+        }
+
+        public List<DTO.Actor> RecupActorByResearch(int numPage,string recherche)
+        {
+            List<DTO.Actor> ListActorDTO = new List<DTO.Actor>();
+            ICollection<DAL.Entities.Actor> ListActorDAL = Manager.RecupActorByResearch(recherche);
+
+            foreach (DAL.Entities.Actor a in ListActorDAL)
+            {
+                ListActorDTO.Add(new DTO.Actor(a.Id, a.Name, a.Surname));
+            }
+
+            return PagedList.PagedListExtensions.ToPagedList(ListActorDTO, numPage+1, 10).ToList();
         }
     }
 }

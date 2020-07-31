@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Film">
+    <xs:sequence>
+      <xs:element name="_x003C_Actor_x003E_k__BackingField" nillable="true" type="tns:ArrayOfActor" />
+      <xs:element name="_x003C_Character_x003E_k__BackingField" nillable="true" type="tns:ArrayOfCharacter" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_PosterPath_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ReleaseDate_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_RunTime_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_VoteAverage_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Film" nillable="true" type="tns:Film" />
+  <xs:complexType name="ArrayOfActor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Actor" nillable="true" type="tns:Actor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActor" nillable="true" type="tns:ArrayOfActor" />
+  <xs:complexType name="Actor">
+    <xs:sequence>
+      <xs:element name="_x003C_Comment_x003E_k__BackingField" nillable="true" type="tns:ArrayOfComment" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Surname_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Actor" nillable="true" type="tns:Actor" />
+  <xs:complexType name="ArrayOfComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comment" nillable="true" type="tns:Comment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComment" nillable="true" type="tns:ArrayOfComment" />
+  <xs:complexType name="Comment">
+    <xs:sequence>
+      <xs:element name="_x003C_Avatar_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Date_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_IdActor_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Rate_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comment" nillable="true" type="tns:Comment" />
+  <xs:complexType name="ArrayOfCharacter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Character" nillable="true" type="tns:Character" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCharacter" nillable="true" type="tns:ArrayOfCharacter" />
+  <xs:complexType name="Character">
+    <xs:sequence>
+      <xs:element name="_x003C_CharacterName_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Character" nillable="true" type="tns:Character" />
+  <xs:complexType name="ArrayOfFilm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Film" nillable="true" type="tns:Film" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilm" nillable="true" type="tns:ArrayOfFilm" />
+  <xs:complexType name="FullActor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Actor">
+        <xs:sequence>
+          <xs:element name="_x003C_Films_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFilm" />
+          <xs:element name="_x003C_characters_x003E_k__BackingField" nillable="true" type="tns:ArrayOfCharacter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FullActor" nillable="true" type="tns:FullActor" />
+</xs:schema>

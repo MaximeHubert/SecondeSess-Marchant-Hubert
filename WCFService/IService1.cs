@@ -38,6 +38,11 @@ namespace WCFService
         [OperationContract]
         FullActor RecupAllActor(long idall);
 
+        [OperationContract]
+        List<Actor> RecupActorByPage(int numPage);
+
+        [OperationContract]
+        List<Actor> RecupActorByResearch(int numPage, string recherche);
 
 
 

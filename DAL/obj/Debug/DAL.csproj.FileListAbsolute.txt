@@ -5,8 +5,8 @@ C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\bin\Debug\EntityFram
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\bin\Debug\EntityFramework.xml
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\obj\Debug\DAL.dll
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\obj\Debug\DAL.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

@@ -39,5 +39,6 @@ namespace DTO
         {
             Title = title;
         }
+
     }
 }

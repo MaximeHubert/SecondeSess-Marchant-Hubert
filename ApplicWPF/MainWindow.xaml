@@ -1,0 +1,46 @@
+﻿<Window x:Class="ApplicWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApplicWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="606" Width="1478">
+    <Window.Resources>
+        <local:ConverterHour x:Key="ConverterHour"/>
+    </Window.Resources>
+    <Grid Margin="0,0,512,0">
+        <DataGrid x:Name="dataGridActor"  Margin="28,69,654,230" ItemsSource="{Binding}"  AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="ClickActor">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="132" Binding="{Binding Name}" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Surname" Width="132" Binding="{Binding Surname}" FontWeight="Bold"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonSuivant" Content="Suivante"  Margin="194,373,654,169" Click="PSuivante"/>
+        <Button x:Name="ButtonPrecedent" Content="Précédent"  Margin="28,373,820,169" Click="PPrecedent"/>
+        <Button x:Name="ButtonRecherche" Content="Rechercher"  Margin="194,431,654,111" Click="BRecherche"/>
+        <Button x:Name="ButtonAnnuler" Content="Annuler"  Margin="194,485,654,57" Click="BAnnuler"/>
+        <TextBox x:Name="textrecherche" Margin="10,431,799,111" TextWrapping="Wrap" Text="" />
+        <Label x:Name="LabelNomActor" Content="" HorizontalAlignment="Center" Margin="347,10,-452,483" FontSize="50"/>
+        <Image x:Name="ImageFilm"  Height="274"  Width="246" Source="{Binding }" Margin="347,116,362,185"/>
+        <ListView x:Name="listFilm"  Height="274" Margin="624,116,-152,185" SelectionChanged="ClickFilm">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn   Header = "Title" Width="170" DisplayMemberBinding="{Binding Title}"/>
+                    <GridViewColumn   Header = "ReleaseDate" Width="100" DisplayMemberBinding="{Binding ReleaseDate}"/>
+                    <GridViewColumn   Header = "VoteAverage" Width="100" DisplayMemberBinding="{Binding VoteAverage}"/>
+                    <GridViewColumn   Header = "RunTime" Width="100" DisplayMemberBinding= "{Binding RunTime, Converter={StaticResource ConverterHour}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listPersonnage"  Height="274" Margin="1138,116,-452,185" RenderTransformOrigin="-0.134,0.477" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn   Header ="Personnage" Width="270" />
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+    </Grid>
+</Window>

@@ -18,3 +18,5 @@ C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleTests\obj\Debug\C
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleTests\obj\Debug\ConsoleTests.csproj.CopyComplete
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleTests\obj\Debug\ConsoleTests.exe
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleTests\obj\Debug\ConsoleTests.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleTests\bin\Debug\PagedList.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleTests\bin\Debug\PagedList.xml

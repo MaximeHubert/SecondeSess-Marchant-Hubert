@@ -15,3 +15,5 @@ C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.csproj
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.dll
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\obj\Debug\BLL.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\PagedList.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\BLL\bin\Debug\PagedList.xml
