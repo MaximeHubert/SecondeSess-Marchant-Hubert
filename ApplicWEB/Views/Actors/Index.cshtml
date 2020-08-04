@@ -1,9 +1,35 @@
-﻿@model List<ApplicWEB.Models.Actor> 
+﻿@model List<ApplicWEB.Models.Actor>
 
 @{
     ViewBag.Title = "Index";
 }
-<link rel="stylesheet" runat="server" media="screen" href="~/CSS/RateCss.css" />
+
+
+<style>
+    table.table td:nth-child(3) {
+        width: 100px;
+        position: relative;
+    }
+
+    table.table td:nth-child(3) div {
+            background-color: gold;
+            position:  absolute;
+            top : 0;
+            left: 0;
+            height: 18px;
+            z-index:100;
+    }
+
+
+        table.table td:nth-child(3) a {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100px;
+            z-index: 110;
+            padding: 0;
+        }
+</style>
 
 <table class="table table-dark">
     <thead>
@@ -26,25 +52,27 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(ApplicWEB.Models.Actor a in Model)
+        @foreach (ApplicWEB.Models.Actor a in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => a.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => a.Surname)
-            </td>
-            <td>
-                <div style="width:100%%">@Html.DisplayFor(modelItem => a.Rate)</div>
-            </td>
-            <td>
-                @Html.ActionLink("Films","Index","Films",new { id = a.Id, Numpage = (string)@ViewData["Numpage"] }, new { @class = "button"})
-            </td>
-            <td>
-                @Html.ActionLink("Comments", "Index", "Comments", new { id = a.Id }, new { @class = "button" })
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => a.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => a.Surname)
+                </td>
+                <td>
+                    <div style="width: calc(2% * @a.Rate) "></div>
+                    @{float nombre = @a.Rate / 10; }
+                    <a><img src="https://i.ibb.co/thCJpfH/Stars.png" alt="Stars" title="@nombre" border="0" width="100"></a>
+                </td>
+                <td>
+                    @Html.ActionLink("Films", "Index", "Films", new { id = a.Id, Numpage = (string)@ViewData["Numpage"] }, new { @class = "button" })
+                </td>
+                <td>
+                    @Html.ActionLink("Comments", "Index", "Comments", new { id = a.Id }, new { @class = "button" })
+                </td>
+            </tr>
         }
     </tbody>
 </table>
@@ -59,4 +87,4 @@
     {
         @Html.ActionLink("Suivante", "Index", "Actors", new { Numpage = (Int32.Parse((string)@ViewData["Numpage"]) + 1).ToString() }, new { @class = "button" })
     }
-    </div>
+</div>

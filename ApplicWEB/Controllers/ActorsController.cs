@@ -43,9 +43,10 @@ namespace ApplicWEB.Controllers
                 else
                 {
                      moyenne = total / nombre;
+                    moyenne = moyenne * 10;
                 }
 
-                ListActors.Add(new Actor(a.Id, a.Name, a.Surname,moyenne));
+                ListActors.Add(new Actor(a.Id, a.Name, a.Surname, (int)moyenne));
             }
 
 

@@ -1,8 +1,9 @@
-﻿@model List<ApplicWEB.Models.Film> 
+﻿@model List<ApplicWEB.Models.Film>
 
 @{
     ViewBag.Title = "Index";
 }
+
 
 <table class="table table-dark">
     <thead>
@@ -24,25 +25,25 @@
     <tbody>
         @foreach (ApplicWEB.Models.Film f in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => f.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => f.ReleaseDate)
-            </td>
-            <td>
-                @{String convert = f.RunTime / 60 + ":" + f.RunTime % 60;}
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => f.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => f.ReleaseDate)
+                </td>
+                <td>
+                    @{String convert = f.RunTime / 60 + ":" + f.RunTime % 60;}
 
-            </td>
-            <td>
-                <img src="@{String image ="https://raw.githubusercontent.com/Dejan1Petkovic/Movies/master/images" + f.PosterPath;}" height="100" width="50"/>
-            </td>
-        </tr>
+                </td>
+                <td>
+                    <img src="@{String image ="https://raw.githubusercontent.com/Dejan1Petkovic/Movies/master/images" + f.PosterPath;}" height="100" width="50" />
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 <div col-md-4>
-        @Html.ActionLink("Back", "Index", "Actors", new { Numpage = (string)@ViewData["Nombre"]}, new { @class = "button" })  
+    @Html.ActionLink("Back", "Index", "Actors", new { Numpage = (string)@ViewData["Nombre"] }, new { @class = "button" })
 </div>
 

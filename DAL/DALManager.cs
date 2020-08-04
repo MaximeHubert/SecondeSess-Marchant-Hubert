@@ -207,7 +207,7 @@ namespace DAL
 
         public List<Actor> RecupActorByPage()
         {
-            return DBContext.actor.OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList(); ;
+            return DBContext.actor.OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList(); 
         }
 
         public List<Actor> RecupActorByResearch(string recherche)
