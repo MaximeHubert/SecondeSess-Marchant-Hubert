@@ -50,7 +50,7 @@ namespace ApplicWEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int id, string avatar, string content, int rate)
+        public ActionResult Index(int  id, string avatar, string content, int rate)
         {
             Service1Client WPF = new Service1Client();
             WPF.AddComment(id, avatar, content, rate);

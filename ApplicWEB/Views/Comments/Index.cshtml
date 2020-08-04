@@ -69,10 +69,15 @@
         <div col-md-4>
             <form method="POST">
                 <input type="hidden" name="id" id="id" value="@ViewData["Id"]">
-                <label>avatar</label> <input type="text" name="avatar"  required></label><br />
+                <label>avatar</label> <input type="text" name="avatar" required></label><br />
                 <label>content</label><input type="text" name="content" id="content" required /><br />
-                <label>Note</label><input type="number" id="rate" min="1" max="5" name="rate" value="1" /><br />
-
+                <label>Rate</label><select name="rate" size="1"id="rate" >
+                    <option value="1">★</option>
+                    <option value="2">★★</option>
+                    <option value="3">★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="5">★★★★★</option>
+                </select>
                 <button type="submit" class="btn btn-success">Add</button>
             </form>
         </div>
