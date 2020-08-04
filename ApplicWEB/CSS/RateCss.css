@@ -1,0 +1,16 @@
+﻿body {
+  table.acteurs td:nth-child(3)
+  {
+      width: 100px;
+      position:relative;
+  }
+
+   table.acteurs td:nth-child(3) div {
+        background-color : gold;
+        width: 50%;
+        position: absolute;
+        top:0;
+        left:0;
+        height: 18px;
+   }
+}

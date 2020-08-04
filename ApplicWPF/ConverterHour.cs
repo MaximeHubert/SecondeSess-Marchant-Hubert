@@ -12,12 +12,12 @@ namespace ApplicWPF
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int hours = ((int)value - (int)value % 60) / 60;
-
-            if (((int)value - hours * 60) < 10)
-                return hours + ":0" + ((int)value - hours * 60);
-            else
-                return hours + ":" + ((int)value - hours * 60);
+            int hours = (int)value / 60;
+            //total minutes
+            int minutes = (int)value % 60;
+            //output is 1:10
+            var time = $"{hours}:{minutes:00}";
+            return time;
 
         }
 

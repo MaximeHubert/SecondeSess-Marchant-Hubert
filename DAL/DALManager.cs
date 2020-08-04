@@ -94,7 +94,7 @@ namespace DAL
 
         public ICollection<Film> RecupFilmActorName(string rechercheactor, int max)
         {
-            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Name.Contains( rechercheactor)).Take(max).ToList();
+            List<CharacterActor> characterActors = DBContext.characterActor.Where(ca => ca.Actor.Surname.Contains( rechercheactor)).Take(max).ToList();
             List<Film> ListFilm = new List<Film>();
 
 
@@ -207,14 +207,12 @@ namespace DAL
 
         public List<Actor> RecupActorByPage()
         {
-            List<Actor> ListActor = DBContext.actor.OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList();
-            return ListActor;
+            return DBContext.actor.OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList(); ;
         }
 
         public List<Actor> RecupActorByResearch(string recherche)
         {
-            List<Actor> ListActor = DBContext.actor.Where(a => a.Name.Contains(recherche)).OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList();
-            return ListActor;
+            return DBContext.actor.Where(a => a.Surname.Contains(recherche)).OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList(); ;
         }
     }
 }

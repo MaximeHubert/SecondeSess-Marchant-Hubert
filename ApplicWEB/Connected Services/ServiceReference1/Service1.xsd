@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61098/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO" />
+  <xs:element name="AddFilm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="film" nillable="true" type="q1:Film" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilmResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idcom" type="xs:int" />
+        <xs:element minOccurs="0" name="avatar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rate" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Recup5Film">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Recup5FilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="Recup5FilmResult" nillable="true" type="q2:ArrayOfFilm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupFilmActor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recherche" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupFilmActorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecupFilmActorResult" nillable="true" type="q3:ArrayOfFilm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupRoleFilmActor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idactor" type="xs:long" />
+        <xs:element minOccurs="0" name="idfilm" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupRoleFilmActorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecupRoleFilmActorResult" nillable="true" type="q4:ArrayOfCharacter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupFilmActorName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rechercheactor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="max" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupFilmActorNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecupFilmActorNameResult" nillable="true" type="q5:ArrayOfFilm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuptopFilm">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuptopFilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecuptopFilmResult" nillable="true" type="q6:ArrayOfFilm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupAllActor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idall" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupAllActorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecupAllActorResult" nillable="true" type="q7:FullActor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupActorByPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numPage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupActorByPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecupActorByPageResult" nillable="true" type="q8:ArrayOfActor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupActorByResearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numPage" type="xs:int" />
+        <xs:element minOccurs="0" name="recherche" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupActorByResearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="RecupActorByResearchResult" nillable="true" type="q9:ArrayOfActor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

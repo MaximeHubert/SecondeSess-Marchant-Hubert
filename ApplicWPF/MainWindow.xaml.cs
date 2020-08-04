@@ -236,7 +236,7 @@ namespace ApplicWPF
 
                 var Poster= new BitmapImage();
                 Poster.BeginInit();
-                Poster.UriSource = new Uri("http://image.tmdb.org/t/p/w185" + FilmSelect.PosterPath);
+                Poster.UriSource = new Uri("https://raw.githubusercontent.com/Dejan1Petkovic/Movies/master/images" + FilmSelect.PosterPath);
                 Poster.EndInit();
                 ImageFilm.Source = Poster;
                 
