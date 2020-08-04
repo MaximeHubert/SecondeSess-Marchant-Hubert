@@ -1,6 +1,6 @@
 ﻿body {
-  table.acteurs td:nth-child(3)
-  {
+  table.acteurs td:nth-child(3){
+  
       width: 100px;
       position:relative;
   }

@@ -1,0 +1,85 @@
+﻿@model List<ApplicWEB.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    form { /* Cadre du formulaire */
+        border: 2px solid gray;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 15px;
+        width: 600px;
+    }
+
+    label { /* Pour alignement des zones de saisie */
+        width: 150px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+</style>
+
+
+
+<div col-md-12>
+    <div col-md-8>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        Content
+                    </th>
+                    <th>
+                        Rate
+                    </th>
+                    <th>
+                        Avatar
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ApplicWEB.Models.Comment c in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => c.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => c.Rate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => c.Avatar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => c.Date)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+        <div col-md-4>
+            <form method="POST">
+                <input type="hidden" name="id" id="id" value="@ViewData["Id"]">
+                <label>avatar</label> <input type="text" name="avatar"  required></label><br />
+                <label>content</label><input type="text" name="content" id="content" required /><br />
+                <label>Note</label><input type="number" id="rate" min="1" max="5" name="rate" value="1" /><br />
+
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+</div>
+    <div col-md-4>
+        @Html.ActionLink("Back", "Index", "Actors", new { Numpage = (string)@ViewData["Nombre"] }, new { @class = "button" })
+    </div>
+
+
+

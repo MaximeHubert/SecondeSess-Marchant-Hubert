@@ -13,9 +13,8 @@ namespace ApplicWEB.Models
         public int RunTime { get; set; }
         public string PosterPath { get; set; }
 
-        public Film(long id, string title, string releaseDate, int runTime, string posterPath)
+        public Film( string title, string releaseDate, int runTime, string posterPath)
         {
-            Id = id;
             Title = title;
             ReleaseDate = releaseDate;
             RunTime = runTime;
