@@ -51,13 +51,15 @@ namespace ApplicWPF
 
         private void BSave(object sender, RoutedEventArgs e)
         {
-
-            WPF.AddComment(this.id, textavatar.Text, textContenu.Text, Convert.ToInt32(BoxCote.Text));
-            chargerComment(this.id);
-            textavatar.Text = "";
-            textContenu.Text = "";
-            BoxCote.Text = "0";
-            mainWindow.Moyenne();
+            if (!textavatar.Text.Equals("") && !textContenu.Text.Equals(""))
+            {
+                WPF.AddComment(this.id, textavatar.Text, textContenu.Text, Convert.ToInt32(BoxCote.Text));
+                chargerComment(this.id);
+                textavatar.Text = "";
+                textContenu.Text = "";
+                BoxCote.Text = "0";
+                mainWindow.Moyenne();
+            }
 
         }
 
