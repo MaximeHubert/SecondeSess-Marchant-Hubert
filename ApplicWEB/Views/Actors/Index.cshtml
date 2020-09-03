@@ -70,7 +70,7 @@
                     @Html.ActionLink("Films", "Index", "Films", new { id = a.Id, Numpage = (string)@ViewData["Numpage"] }, new { @class = "button" })
                 </td>
                 <td>
-                    @Html.ActionLink("Comments", "Index", "Comments", new { id = a.Id }, new { @class = "button" })
+                    @Html.ActionLink("Comments", "Index", "Comments", new { id = a.Id, Numpage = (string)@ViewData["Numpage"] }, new { @class = "button" })
                 </td>
             </tr>
         }

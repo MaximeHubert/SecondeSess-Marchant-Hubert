@@ -37,7 +37,8 @@
 
                 </td>
                 <td>
-                    <img src="@{String image ="https://raw.githubusercontent.com/Dejan1Petkovic/Movies/master/images" + f.PosterPath;}" height="100" width="50" />
+                    @{String image = "https://image.tmdb.org/t/p/w185" + f.PosterPath;}
+                    <img src="@image" height="100" width="50" />
                 </td>
             </tr>
         }

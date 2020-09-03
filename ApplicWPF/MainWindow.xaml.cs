@@ -174,6 +174,9 @@ namespace ApplicWPF
             listFilm.Items.Clear();
             listPersonnage.Items.Clear();
             LabelNomActor.Content = "";
+            var Poster = new BitmapImage();
+            ImageFilm.Source = Poster;
+
 
             if (ActorSelect != null)
             {
@@ -182,8 +185,8 @@ namespace ApplicWPF
 
                 Moyenne();
 
-                List<DTO.Film> listfilmDTO = new List<DTO.Film>();
-                List<DTO.Character> listcharacterDTO = new List<DTO.Character>();
+                /*List<DTO.Film> listfilmDTO = new List<DTO.Film>();
+                List<DTO.Character> listcharacterDTO = new List<DTO.Character>();*/
 
                
 
@@ -236,7 +239,7 @@ namespace ApplicWPF
 
                 var Poster= new BitmapImage();
                 Poster.BeginInit();
-                Poster.UriSource = new Uri("https://raw.githubusercontent.com/Dejan1Petkovic/Movies/master/images" + FilmSelect.PosterPath);
+                Poster.UriSource = new Uri("https://image.tmdb.org/t/p/w185" + FilmSelect.PosterPath);
                 Poster.EndInit();
                 ImageFilm.Source = Poster;
                 

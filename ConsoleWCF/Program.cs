@@ -1,4 +1,5 @@
-﻿using ConsoleWCF.ServiceReference1;
+﻿using BLL;
+using ConsoleWCF.ServiceReference1;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace ConsoleWCF
         private volatile Type dependency = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
         private string file = @"C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\movies_v2.txt";
         private StreamReader fichier = null;
+        private BLLManager manager = null;
         Service1Client WCF = new Service1Client();
         static void Main(string[] args)
         {
@@ -332,6 +334,7 @@ namespace ConsoleWCF
         {
             
             int i = 0;
+            manager = new BLLManager();
             fichier = new StreamReader(file);
 
             while (i < 1000)
@@ -340,7 +343,7 @@ namespace ConsoleWCF
                 Film film = DecodeFilmline(ligne);
                 if (film.Title.Length <= 90)
                 {
-                    WCF.AddFilm(film);
+                    manager.AddFilm(film);
                 }
                 Console.WriteLine(i + " " + film.Title + " ");
                 i++;

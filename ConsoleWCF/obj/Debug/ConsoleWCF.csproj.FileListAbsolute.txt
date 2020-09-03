@@ -12,3 +12,11 @@ C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\Con
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.csproj.CopyComplete
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.exe
 C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\obj\Debug\ConsoleWCF.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\BLL.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\DAL.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\PagedList.dll
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\BLL.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\BLL.dll.config
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\DAL.pdb
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\DAL.dll.config
+C:\Users\maxim\OneDrive\Bureau\Annee3\Dotnet\ExamenSess\ConsoleWCF\bin\Debug\PagedList.xml
