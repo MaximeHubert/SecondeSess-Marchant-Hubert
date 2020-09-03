@@ -10,10 +10,10 @@ namespace ApplicWEB.Models
         public long Id { get; set; }
         public string Title { get; set; }
         public string ReleaseDate { get; set; }
-        public int RunTime { get; set; }
+        public string RunTime { get; set; }
         public string PosterPath { get; set; }
 
-        public Film( string title, string releaseDate, int runTime, string posterPath)
+        public Film( string title, string releaseDate, string runTime, string posterPath)
         {
             Title = title;
             ReleaseDate = releaseDate;

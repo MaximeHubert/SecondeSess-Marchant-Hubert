@@ -19,7 +19,10 @@ namespace ApplicWEB.Controllers
 
             foreach (DTO.Film f in ListFilmDTO)
             {
-                ListFilms.Add(new Film(f.Title, f.ReleaseDate, f.RunTime, f.PosterPath));
+                string val2 = (f.RunTime/60).ToString();
+                string val1 = (f.RunTime % 60).ToString();
+                string runtime = val2 + "h"+ val1 + "min";
+                ListFilms.Add(new Film(f.Title, f.ReleaseDate, runtime, f.PosterPath));
             }
 
             return View(ListFilms);
